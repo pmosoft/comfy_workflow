@@ -1,0 +1,66 @@
+{
+  "last_node_id": 9,
+  "last_link_id": 8,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VHS_LoadVideo",
+      "pos": [50, 100],
+      "widgets_values": ["input_golf_swing.mp4", 24, 720, 1280]
+    },
+    {
+      "id": 2,
+      "type": "SelectEveryNthFrame",
+      "pos": [300, 100],
+      "widgets_values": [9]
+    },
+    {
+      "id": 3,
+      "type": "ImageBatchLimit",
+      "pos": [550, 100],
+      "widgets_values": [8]
+    },
+    {
+      "id": 4,
+      "type": "Qwen2VL_Instruct",
+      "pos": [800, 100],
+      "widgets_values": [
+        "Describe this golf swing video as a cinematic AI video prompt. Focus on golfer appearance, swing motion, ball trajectory, camera pan, sunrise lighting, mountain-top golf course, vertical YouTube Shorts composition."
+      ]
+    },
+    {
+      "id": 5,
+      "type": "TextConcatenate",
+      "pos": [1050, 100],
+      "widgets_values": [
+        "ultra realistic, cinematic, smooth motion, visible golf ball trail, luxury sportswear, golden sunrise light, 9:16 shorts framing"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "WanVideo_TextEncode",
+      "pos": [1300, 100]
+    },
+    {
+      "id": 7,
+      "type": "WanVideo_Sampler",
+      "pos": [1550, 100],
+      "widgets_values": [81, 16, 20, 6]
+    },
+    {
+      "id": 8,
+      "type": "VHS_VideoCombine",
+      "pos": [1800, 100],
+      "widgets_values": [16, 3, "golf_shorts_15s.mp4"]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "IMAGE"],
+    [2, 2, 0, 3, 0, "IMAGE"],
+    [3, 3, 0, 4, 0, "IMAGE"],
+    [4, 4, 0, 5, 0, "STRING"],
+    [5, 5, 0, 6, 0, "STRING"],
+    [6, 6, 0, 7, 0, "CONDITIONING"],
+    [7, 7, 0, 8, 0, "VIDEO"]
+  ]
+}
