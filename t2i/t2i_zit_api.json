@@ -1,17 +1,4 @@
 {
-  "9": {
-    "inputs": {
-      "filename_prefix": "z-image",
-      "images": [
-        "43",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
-  },
   "39": {
     "inputs": {
       "clip_name": "qwen_3_4b.safetensors",
@@ -34,8 +21,8 @@
   },
   "41": {
     "inputs": {
-      "width": 960,
-      "height": 1280,
+      "width": 480,
+      "height": 640,
       "batch_size": 1
     },
     "class_type": "EmptySD3LatentImage",
@@ -73,10 +60,10 @@
   },
   "44": {
     "inputs": {
-      "seed": 902254426324215,
-      "steps": 8,
+      "seed": 857706861204104,
+      "steps": 10,
       "cfg": 1,
-      "sampler_name": "euler",
+      "sampler_name": "euler_cfg_pp",
       "scheduler": "simple",
       "denoise": 1,
       "model": [
@@ -103,7 +90,7 @@
   },
   "45": {
     "inputs": {
-      "text": "athletic young woman, healthy body, toned figure, ponytail hairstyle, sportswear, bright energy, running or stretching pose,outdoor park or track field,natural outdoor lighting, realistic skin, dynamic pose, fitness magazine photography, ultra detailed",
+      "text": "1girl",
       "clip": [
         "39",
         0
@@ -126,7 +113,7 @@
   },
   "47": {
     "inputs": {
-      "shift": 3,
+      "shift": 0.05,
       "model": [
         "46",
         0
@@ -144,6 +131,40 @@
     "class_type": "UnetLoaderGGUF",
     "_meta": {
       "title": "Unet Loader (GGUF)"
+    }
+  },
+  "53": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "payload_info": "none"
+    },
+    "class_type": "SaveImageWithHook",
+    "_meta": {
+      "title": "💾 Save Image with Python Hook"
+    }
+  },
+  "54": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "payload_info": "none"
+    },
+    "class_type": "SaveImageWithHook",
+    "_meta": {
+      "title": "💾 Save Image with Python Hook"
+    }
+  },
+  "55": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "payload_info": "none",
+      "images": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithHook",
+    "_meta": {
+      "title": "💾 Save Image with Python Hook"
     }
   }
 }
